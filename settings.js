@@ -1,105 +1,70 @@
-/*
-› Create By @RIY
-› Base Ori @DikaArdnt
-› Kalau mau tambahin fitur di index.js
-› Edit text menu di file language › help.js
-*/
-
-//gausah di apa² in!
 const fs = require('fs')
 const chalk = require('chalk')
+const proces = require('process')
 
-//—————「 Website Apikey 」—————//
-global.APIs = {
-//gausah di apa² in!
-zenz: 'https://zenzapis.xyz',
-}
-
-//—————「 Website Apikey 」—————//
-global.APIKeys = {
-//gausah di apa² in, udah free apikey :)
-'https://zenzapis.xyz': 'BagasGanz',
-}
-
-//—————「 Setting Owner 」—————//
-global.owner = ['6287819503464','6287819503464','6287819503464'] //ubah jadi nomor mu, note tanda ' gausah di hapus!
-global.premium = ['6287819503464'] //ubah jadi nomor mu, note tanda ' gausah di hapus!
-global.ownernomer = '6287819503464' //ubah jadi nomor mu, note tanda ' gausah di hapus!
-
-//—————「 Set Nama Own & Bot 」—————//
-global.ownername = 'Habiib' //ubah jadi nama mu, note tanda ' gausah di hapus!
-global.botname = 'Xzyyo_bot' //ubah jadi nama bot mu, note tanda ' gausah di hapus!
-global.footer = 'Habiib' //ubah jadi nama mu, note tanda ' gausah di hapus!
-
-//—————「 Set Kebutuhan Button & Kontak 」—————//
-//ubah aja kalau ada yang gapunya gsh di hps anggap aja credits :), note tanda ' gausah di hapus!
-global.youtube = 'https://youtube.com/channel/UCtM-pDaaGVRe4BJ7w4qE4Bw'
-global.ig = 'https://instagram.com/riychdwayne'
-global.mygc = 'https://chat.whatsapp.com/CRY23lVKmXB7sCMhHmcwVw'
-global.myweb = 'https://s.id/chikabot'
-global.email = 'riychdwaynee@gmail.com'
-global.region = 'indonesia'
-
-//—————「 Set Wm 」—————//
-global.packname = '© Xzyyo_bot' //ubah jadi nama bot mu, note tanda ' gausah di hapus!
-global.author = 'Habiib' //ubah jadi nama mu, note tanda ' gausah di hapus!
-
-//—————「 Set Nama Session 」—————//
-//gausah di apa² in!
-global.sessionName = 'session'
-
-//—————「 Set Limit 」—————//
-//terserah mau ubah atau nggak, note : tanda ' gausah di hapus!
-global.limitawal = {
-premium: "Infinity",
-free: 15,
-}
-
-//—————「 Set Image 」—————//
-//terserah mau ubah apa nggak, menurut gua jangan di ubah!
-global.thumb = fs.readFileSync('./image/chika.jpg')
-/*global.veloriy = fs.readFileSync('./image/chika.mp4')*/
-
-//—————「 Set Image Welcome 」—————//
-//terserah mau ubah apa nggak, menurut gua jangan di ubah!
-global.BgWelcLeav = 'https://telegra.ph/file/ca207893ae26d531cd9c6.jpg'
-
-//—————「 Set Random Image Menu 」—————//
-//gausah di apa² in!
-global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
-global.fluming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
-global.flarun = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
-global.flasmurf = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
-
-//—————「 Set Prefix 」—————//
-//gausah di apa² in!
-global.prefa = ['','!','.','🐦','🐤','🗿']
-
-//—————「 Set Simbol 」—————//
-//terserah mai ubah atau nggak, note : tanda ' gausah di hapus!
-global.sp = '⭔'
-
-//—————「 Set Message 」—————//
-//terserah mau ubah apa nggak, note : tanda ' gausah di hapus!
+global.owner = ['6283893345561','6285326569399']
+global.premium = ['6283893345561']
+global.packname = ''
+global.author = 'Wa : 0838+9334-5561\nYT : ZanzHost×\nIG : Zanzbotzx\nGH : ZanzBotz\nTT : yt_ZanzHost'
+global.sessionName = 'Zanzbotz'
+global.namabotnya = 'ZanzBotz'
+global.namaownernya = 'Wannn'
+global.dapkey = 'Kirbotz123'
+global.lolkey = 'Atakbotz'
+global.kirkey = 'KirBotz'
+global.wame = 'https://wa.me/6283893345561'
+global.gc = 'https://chat.whatsapp.com/KbMfqI1VEtNCeUAxAZAg23'
+global.ownerNumber = ["6283893345561@s.whatsapp.net"]
+global.email = 'tesheroku123@gmail.com'
+global.yt = 'https://bit.ly/39Ivus6'
+global.webkir = 'https://bit.ly/3yk3gOo'
+global.githubkir = 'https://bit.ly/3FqVBj8'
+global.region = 'Indonesia'
+global.prefa = ['','!','.','#','-','•']
 global.mess = {
-success: '_Done._',
-admin: '_Fitur Khusus Admin Group!_',
-botAdmin: '_Bot Harus Menjadi Admin Terlebih Dahulu!_',
-owner: '_Fitur Khusus Owner Bot_',
-group: '_Fitur Digunakan Hanya Untuk Group!_',
-private: '_Fitur Digunakan Hanya Untuk Private Chat!_',
-bot: '_Fitur Khusus Pengguna Nomor Bot_',
-wait: '_Sedang Di Proses..._',
-error: '_Fitur Sedang Error!_',
-endLimit: '_Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12_',
+    success: 'Success 💯',
+    admin: 'Fitur Khusus Admin Group!!!',
+    botAdmin: 'Bot Harus Menjadi Admin Terlebih Dahulu!!!',
+    owner: 'Fitur Khusus Owner Bot!!!',
+    group: 'Fitur Digunakan Hanya Untuk Group!!!',
+    private: 'Fitur Digunakan Hanya Untuk Private Chat!!!',
+    bot: 'Fitur Khusus Pengguna Nomor Bot!!!',
+    error: 'Error Kak Silahkan Chat Owner',
+    wait: '❗Waittt...',
+    noPetualang: 'Itssss Kamu Belum Jadi Member Petualang, Silahkan Ketik .joinrpg <namamu>',
+    endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12',
+    premium: 'Maaf Sebelumya Kamu Belum Premium, Silahkan Pencet Di Bawah Untuk Beli Premium',
+    wrongFormat: 'Format salah, coba liat lagi di menu',
 }
 
-//—————「 Batas Akhir 」—————//
-//gausah si apa² in!
+
+global.limitawal = {
+    premium: "Infinity",
+    free: 5
+}
+
+global.creator = JSON.parse(fs.readFileSync('./Database/owner.json'))
+
+global.thumb = fs.readFileSync('./Image/kirbotz.jpg')
+global.thumbdm = fs.readFileSync('./Image/diamond.jpg')
+global.thumbrpg = fs.readFileSync('./Image/kirbotzrpg.jpg')
+global.imgjoinrpg = fs.readFileSync('./Image/joinrpg.jpg')
+global.imgmining = fs.readFileSync('./Image/mining.jpg')
+global.sticknya = fs.readFileSync('./Kir/JANGANDIUBAH/fuck.webp')
+
+global.imgdevil = fs.readFileSync('./Image/img/devil.jpg')
+global.imgslime = fs.readFileSync('./Image/img/slime.jpg')
+global.imgdemon = fs.readFileSync('./Image/img/demon.jpg')
+global.imggoblin = fs.readFileSync('./Image/img/goblin.jpg')
+global.imgdemonking = fs.readFileSync('./Image/img/demonking.jpg')
+global.imgbehemoth = fs.readFileSync('./Image/img/behemoth.jpg')
+
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
-fs.unwatchFile(file)
-console.log(chalk.redBright(`Update'${__filename}'`))
-delete require.cache[file]
-require(file)
+	fs.unwatchFile(file)
+	console.log(chalk.redBright(`Update'${__filename}'`))
+	delete require.cache[file]
+	require(file)
 })
+
+proces.on('uncaughtException', console.error);
